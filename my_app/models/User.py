@@ -13,13 +13,11 @@ class User(db.Model):
     password = db.Column(db.String(255))
     profile_picture = db.Column(db.String(255))
     user_type = db.Column(db.String(255))
-    def __init__(self, user, surname, firstname , email, password, profile_picture):
-        self.username = user
+    def __init__(self, username, surname, firstname , email, password, profile_picture,user_type):
+        self.username = username
         self.surname = surname
         self.firstname = firstname
         self.email = email
         self.password = password
         self.profile_picture = profile_picture
         self.user_type = user_type
-    def __repr__(self):
-        return '<User %d>'% self.id
