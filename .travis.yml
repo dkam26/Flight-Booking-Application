@@ -1,0 +1,23 @@
+language: python
+python:
+  - "3.6"
+branches:
+    only:
+        - develop
+services:
+  - postgresql
+
+#To install dependences
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - createuser kamaradeo --createdb
+  - createdb booking -U kamaradeo
+
+
+#To run tests
+script:
+  - nosetests --with-coverage --cover-package=my_app
+
+after_success:
