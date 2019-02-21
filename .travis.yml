@@ -21,3 +21,4 @@ script:
   - nosetests --with-coverage --cover-package=my_app
 
 after_success:
+  - coveralls
