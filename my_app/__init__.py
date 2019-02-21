@@ -15,4 +15,4 @@ else:
     app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 db=SQLAlchemy(app)
 api = Api(app)
-from my_app import views
+
